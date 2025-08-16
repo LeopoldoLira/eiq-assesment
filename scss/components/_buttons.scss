@@ -1,0 +1,30 @@
+.primary-button{
+    background-color: var(--primary-color);
+    padding: 0.625rem 1.25rem;
+    font-weight: 600;
+    font-size: 1.125rem;
+    text-decoration: none;
+    border-radius: 1rem;
+}
+
+
+.secondary-button{
+    background-color: var(--secondary-color);
+    padding: 0.625rem 1.25rem;
+    font-weight: 600;
+    font-size: 1.125rem;
+    text-decoration: none;
+    border-radius: 1rem;
+    color: #21251F;
+}
+
+.outline-button{
+    background-color: none;
+    border: 1px solid var(--secondary-color);
+    padding: 0.625rem 1.25rem;
+    font-weight: 600;
+    font-size: 1.125rem;
+    text-decoration: none;
+    border-radius: 1rem;
+    color: var(--primary-text-color);
+}

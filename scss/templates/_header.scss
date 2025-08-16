@@ -1,0 +1,98 @@
+header{
+  position: sticky;
+  top: 0;
+    padding: 1.875rem 6.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+        /* container size — change to whatever you need */
+    .logo-badge {
+      position: relative;
+      width: 140px;
+      aspect-ratio: 1;       /* keeps it square */
+
+        img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;   /* handles small viewBox differences */
+        pointer-events: none;
+      }
+
+      /* base state */
+      .logo-badge__outer {
+        transform-origin: 50% 50%;
+        transform: rotate(0deg);
+        transition: transform 300ms ease-in-out;
+      }
+    }
+
+
+
+
+    /* on hover */
+    .logo-badge:hover .logo-badge__outer {
+      transform: rotate(90deg);
+    }
+
+    /* accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      .logo-badge__outer { animation: none; }
+    }
+
+
+    .header-navigation{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3.75rem;
+      nav{
+        ul{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap:1.375rem;
+          list-style-type: none;
+          li{
+            a{
+              text-decoration: none;
+              font-size: 1rem;
+              font-weight: 400;
+              line-height: 1.25rem;
+            }
+            .nav__link{
+                position:relative;
+                text-decoration:none;
+                padding-block: 1.25rem;  
+            }
+
+            .nav__link::after{
+              content:"";
+              position:absolute;
+              inset-inline:0;                  /* left:0; right:0; */
+              bottom:0;                        /* distance below text */
+              height:7px;                      /* thickness */
+              background: var(--secondary-color );        /* matches text color */
+              transform: scaleX(0);            /* invisible, collapsed to center */
+              transform-origin: 50% 50%;       /* grow from the middle */
+              transition: transform 200ms ease-in-out;
+            }
+
+            /* show on hover/focus/active page */
+.nav__link:hover::after,
+.nav__link:focus-visible::after,
+.nav__link[aria-current="page"]::after,
+.nav__link.is-active::after{
+  transform: scaleX(1);            /* full width */
+}
+            
+          }
+        }
+      }
+    }
+
+}
+

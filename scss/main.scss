@@ -17,3 +17,8 @@
 // Loading Base styles.
 @use './base/base';
 
+// Loading header Styles
+@use './templates/header';
+
+// Loading Button Components
+@use './components/buttons';

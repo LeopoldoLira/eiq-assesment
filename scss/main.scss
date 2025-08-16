@@ -1,0 +1,19 @@
+// CSS Reset Load
+@use './base/reset';
+
+
+// CSS utils load
+@use './utils/breakpoints';
+@use './utils/mixins';
+
+// Styles for front-page.php template.
+@use './templates/front-page';
+
+
+// Styles for Projects custom post types template.
+@use './templates/custom-post-type-project';
+
+
+// Loading Base styles.
+@use './base/base';
+

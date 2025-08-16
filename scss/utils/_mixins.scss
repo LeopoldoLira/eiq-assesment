@@ -1,0 +1,23 @@
+@use './breakpoints' as breakpoints;
+@use "sass:map";
+
+@mixin responsive($breakpoint) {
+  $range: map.get(breakpoints.$breakpoints, $breakpoint);
+
+  @if $range == null {
+    @error "No breakpoint found for `#{$breakpoint}` in $breakpoints.";
+  }
+
+  $min: map.get($range, min);
+  $max: map.get($range, max);
+
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
+@mixin mac-aspect {
+  @media screen and #{breakpoints.$mac-aspect-ratio} {
+    @content;
+  }
+}

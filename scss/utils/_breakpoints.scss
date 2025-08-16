@@ -1,0 +1,31 @@
+// _breakpoints.scss
+@forward "sass:map";
+$breakpoints: (
+  "phone": (
+    min: 1px,
+    max: 425px
+  ),
+  "tablet": (
+    min: 426px,
+    max: 768px
+  ),
+  "laptop": (
+    min: 769px,
+    max: 1024px
+  ),
+  "desktop": (
+    min: 1025px,
+    max: 1440px
+  ),
+  "wqhd": (
+    min: 1441px,
+    max: 1920px
+  ),
+  "uhd": (
+    min: 1921px,
+    max: 9999px
+  )
+);
+
+// Mac-like aspect ratios
+$mac-aspect-ratio: "(min-aspect-ratio: 4/3)";

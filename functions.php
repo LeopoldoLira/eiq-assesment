@@ -7,3 +7,6 @@ add_action( 'admin_init', function () {
         remove_post_type_support( 'page', 'editor' );
     }
 });
+
+
+require_once get_template_directory() . '/inc/custom_post_types/project.php';

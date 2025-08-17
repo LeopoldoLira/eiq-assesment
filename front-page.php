@@ -115,6 +115,17 @@
 </div>
 
 
+<section class='our-team-section'>
+  <div class='our-team-section__headings'>
+    <h2>Our Team</h2>
+    <p>As proud residents of the Lower Mainland, the Molnar team has an integrated understanding of the local communities it serves. Add to that, this dedicated group of experts has more than a century of combined experience in BC’s housing sector.</p>
+  </div>
+  <div class='our-team-section__slider'>
+
+  </div>
+</section>
+
+
 <div class='page-section-divider'>
   <div class='divider-line'></div>
     <img src='/wp-content/themes/elementiq/assets/images/white-star.png' />

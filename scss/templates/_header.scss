@@ -2,11 +2,10 @@ header{
   position: fixed;
   top: 0;
   z-index: 99;
-    padding: 1.875rem 6.25rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 
         /* container size — change to whatever you need */
     .logo-badge {
@@ -41,12 +40,17 @@ header{
       .logo-badge__outer { animation: none; }
     }
 
+    .header-logo{
+      padding: 1.875rem 0 1.875rem 6.25rem;
+    }
+
 
     .header-navigation{
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 3.75rem;
+      padding: 1.875rem 6.25rem 1.875rem 0;
       nav{
         ul{
           display: flex;
@@ -60,6 +64,8 @@ header{
               font-size: 1rem;
               font-weight: 400;
               line-height: 1.25rem;
+              color: var(--secondary-text-color);
+              font-family: sans-serif;
             }
             .nav__link{
                 position:relative;

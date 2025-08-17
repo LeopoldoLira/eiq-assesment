@@ -45,6 +45,63 @@
     </div>
 </section>
 
+<section class='projects-section'>
+  <div class='projects-section__content-wrapper'>
+    <div class='projects-section__content-wrapper--content'>
+          <h2>BULDING FOR TOMORROW</h2>
+          <p>At Molnar Group, we create thoughtfully designed, community-focused developments that stand the test of time. From vibrant rental homes to revitalized commercial spaces, our projects are built with purpose, quality, and long-term impact in mind.</p>
+    </div>
+    <div class='projects-section__content-wrapper--link'>
+       <a href='/projects'>
+            <div>
+              <p>View Projects</p>
+              <img src='/wp-content/themes/elementiq/assets/images/grey-star.svg' />
+            </div>
+          </a>
+
+    </div>
+  </div>
+  <div class='projects-section__showcase'>
+    <div class='projects-section__showcase--heading'>
+      <h2>
+        BETTER <span style='font-style:italic;'>LIVING</span>
+      </h2>
+    </div>
+    <div class='projects-section__showcase--image first-image'>
+      <img style='border-radius: 0 2.063rem 0 0' src="/wp-content/themes/elementiq/assets/images/showcase_01.png" alt="">
+    </div>
+    <div class='projects-section__showcase--image second-image'>
+      <img style='border-radius: 0 0 0 2.063rem' src="/wp-content/themes/elementiq/assets/images/showcase_02.png" alt="">
+    </div>
+    <div class='projects-section__showcase--heading'>
+      <h2>
+        <span style='font-style:italic;'>A VISION </span> FOR LIFE
+      </h2>
+    </div>
+  </div>
+  <div class='projects-section__content'>
+    <div class='projects-section__content--heading'>
+        <h2>BY FAMILIES FOR FAMILIES</h2>
+    </div>
+    <div class='projects-section__content--paragraphs'>
+      <div>
+        <p>Andre Molnar established the Molnar Group in 1969 with a clear vision: to build homes for families. With 50 years of experience, the family-run company has built close to 6,000 homes across Western Canada and the Pacxific Northwest.</p>
+        <p>Known for high-quality finishes with broad market appeal, the Molnar Group’s singular focus now is to develop and deliver much-needed purpose-built rental homes in Vancouver and on Vancouver Island. The company’s expertise in all aspects of project management assures residents that their homes are the very best.</p>
+      </div>
+      <div>
+        <p>In addition to family-oriented residential development, the Molnar Group maintains a portfolio of commercial properties in Washington State and Western Canada, including the prestigious Hotel Bellwether in Bellingham. It has also developed and managed a portfolio of properties in Montreal.</p>
+        <p>The Molnar Group constantly seeks retail properties as well as redevelopment opportunities for projects that will serve the needs of generations to come.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class='page-section-divider'>
+  <div class='divider-line'></div>
+    <img src='/wp-content/themes/elementiq/assets/images/white-star.png' />
+  <div class='divider-line'></div>
+</div>
+
 
 
 <section style='padding: 100rem 10rem'>

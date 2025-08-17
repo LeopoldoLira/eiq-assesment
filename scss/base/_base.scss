@@ -6,3 +6,22 @@
     --primary-text-color: #21251F;
     --secondary-text-color: #FFFFFF;
 }
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Wittgenstein';
+    font-weight: 400;
+    }
+
+
+.page-section-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.625rem;
+    padding: 0 9.375rem;
+        .divider-line{
+            width: 100%;
+            height: 6px;
+            background-color: white;
+        }
+}

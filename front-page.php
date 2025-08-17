@@ -102,11 +102,27 @@
   <div class='divider-line'></div>
 </div>
 
+<div class='page-section-divider'>
+  <div class='divider-line'></div>
+    <img src='/wp-content/themes/elementiq/assets/images/white-star.png' />
+  <div class='divider-line'></div>
+</div>
+
+<div class='page-section-divider'>
+  <div class='divider-line'></div>
+    <img src='/wp-content/themes/elementiq/assets/images/white-star.png' />
+  <div class='divider-line'></div>
+</div>
 
 
-<section style='padding: 100rem 10rem'>
-    <p>Filler text for testing the shape divider</p>
-</section>
+<div class='page-section-divider'>
+  <div class='divider-line'></div>
+    <img src='/wp-content/themes/elementiq/assets/images/white-star.png' />
+  <div class='divider-line'></div>
+</div>
+
+
+
 
 
 <? get_footer();?>

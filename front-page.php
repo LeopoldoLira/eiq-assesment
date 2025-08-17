@@ -122,6 +122,20 @@
 </div>
 
 
+<section class='cta-section'>
+  <div class='cta-section__wrapper'>
+    <h2>Building for Tomorrow</h2>
+    <p>At Molnar Group, we create thoughtfully designed, community-focused developments that stand the test of time. From vibrant rental homes to revitalized commercial spaces, our projects are built with purpose, quality, and long-term impact in mind.</p>
+    <a class='secondary-button' href="/">Get in Touch</a>
+    <img src="/wp-content/themes/elementiq/assets/images/cta-background.png" alt="">
+    <img src="/wp-content/themes/elementiq/assets/images/cta-background-02.png" alt="">
+  </div>
+</section>
+
+
+<p class='disclaimer'>
+  Links to third-party websites are provided for convenience and do not imply endorsement; we are not responsible for the content or availability of these external sites. We also do not guarantee uninterrupted access to this site and are not liable for any temporary unavailability due to technical issues beyond our control.
+</p>
 
 
 

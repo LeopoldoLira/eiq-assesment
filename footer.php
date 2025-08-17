@@ -141,5 +141,64 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </script>
 
+<script defer>  
+document.addEventListener('DOMContentLoaded', function () {
+  const section = document.getElementById('projects-row');
+  const el = document.querySelector('.projects-swiper');
+  if (!section || !el || !window.Swiper) return;
+
+  // read the section’s left/right padding so first/last slide align to page gutters
+  function getOffsets() {
+    const rect = section.getBoundingClientRect();
+    const cs   = getComputedStyle(section);
+    const padL = parseFloat(cs.paddingLeft) || 0;
+    const padR = parseFloat(cs.paddingRight) || 0;
+    const left  = Math.max(0, rect.left) + padL;
+    const right = Math.max(0, window.innerWidth - rect.right) + padR;
+    return { before: left, after: right };
+  }
+
+  const opts = (() => {
+    const { before, after } = getOffsets();
+    return { slidesOffsetBefore: before, slidesOffsetAfter: after };
+  })();
+
+  // DISTINCT INSTANCE
+  const projectsSwiper = new Swiper('.projects-swiper', {
+    slidesPerView: 'auto',
+    spaceBetween: 24,
+    freeMode: { enabled: true }, // smooth scroll; change to false to snap
+    watchOverflow: true,
+    grabCursor: true,
+    keyboard: { enabled: true },
+    navigation: { nextEl: '.projects-next', prevEl: '.projects-prev' },
+    ...opts,
+    on: {
+      resize(sw) {
+        const { before, after } = getOffsets();
+        sw.params.slidesOffsetBefore = before;
+        sw.params.slidesOffsetAfter  = after;
+        sw.update();
+      }
+    },
+    breakpoints: {
+      0:   { spaceBetween: 16 },
+      768: { spaceBetween: 20 },
+      1200:{ spaceBetween: 24 }
+    }
+  });
+
+  // keep offsets in sync if fonts/layout shift
+  const ro = new ResizeObserver(() => {
+    const { before, after } = getOffsets();
+    projectsSwiper.params.slidesOffsetBefore = before;
+    projectsSwiper.params.slidesOffsetAfter  = after;
+    projectsSwiper.update();
+  });
+  ro.observe(section);
+});
+
+</script>
+
 </body>
 </html>

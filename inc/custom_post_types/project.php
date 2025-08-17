@@ -1,4 +1,6 @@
 <?
+
+add_theme_support( 'post-thumbnails' );
 function eiq_register_projects_cpt() {
     // -------------------------
     // 1. Custom Post Type: Coffee
@@ -39,4 +41,4 @@ function eiq_register_projects_cpt() {
 }
 
 // Hook into init
-add_action('init', 'eiq_register_projects_cpt', 0);
+add_action('init', 'eiq_register_projects_cpt');

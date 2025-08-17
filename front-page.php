@@ -101,6 +101,88 @@
   <div class='divider-line'></div>
 </div>
 
+<!-- <section class='projects'>
+  <div class='projects__types-selection'>
+    <button class='white-button'>ALL</button>
+    <button class='white-button active'>COMMERCIAL</button>
+    <button class='white-button'>CONDOS</button>
+    <button class='white-button'>RENTALS</button>
+  </div>
+  <div class='projects__slider'>
+    
+    <div class='projects__slider--card'>
+      <img src="http://elementiqtest.local/wp-content/uploads/2025/08/project_01.png" alt="">
+      <div>
+        <h2>PROJECT 1</h2>
+        <a href=""><img src="/wp-content/themes/elementiq/assets/images/blue-arrow.svg" alt=""></a>
+      </div>
+    </div>
+    <div class='projects__slider--card'>
+      <img src="http://elementiqtest.local/wp-content/uploads/2025/08/project_01.png" alt="">
+      <div>
+        <h2>PROJECT 1</h2>
+        <a href=""><img src="/wp-content/themes/elementiq/assets/images/blue-arrow.svg" alt=""></a>
+      </div>
+    </div>
+    <div class='projects__slider--card'>
+      <img src="http://elementiqtest.local/wp-content/uploads/2025/08/project_01.png" alt="">
+      <div>
+        <h2>PROJECT 1</h2>
+        <a href=""><img src="/wp-content/themes/elementiq/assets/images/blue-arrow.svg" alt=""></a>
+      </div>
+    </div>
+
+  </div>
+</section> -->
+
+
+<section class="projects" id="projects-row">
+  <div class="projects__types-selection">
+    <button class="white-button is-active">ALL</button>
+    <button class="white-button">COMMERCIAL</button>
+    <button class="white-button">CONDOS</button>
+    <button class="white-button">RENTALS</button>
+  </div>
+
+  <!-- Swiper -->
+  <div class="swiper projects-swiper swiper--bleed">
+    <div class="swiper-wrapper">
+      <?php
+      $projects = get_field('projects_selections'); // relationship field
+      if ($projects):
+        foreach ($projects as $p):
+          $pid   = is_object($p) ? $p->ID : $p;
+          $url   = get_permalink($pid);
+          $title = get_the_title($pid);
+          $img   = get_post_thumbnail_id($pid);
+      ?>
+      <article class="swiper-slide projects__slider--card">
+        <a class="projects-card__link" href="<?php echo esc_url($url); ?>">
+          <figure class="projects-card__media">
+            <?php echo wp_get_attachment_image($img, 'large', false, [
+              'class'    => 'projects-card__img',
+              'loading'  => 'lazy',
+              'decoding' => 'async',
+              'alt'      => esc_attr($title)
+            ]); ?>
+          </figure>
+          <div class="projects-card__meta">
+            <h2 class="projects-card__title"><?php echo esc_html($title); ?></h2>
+            <span class="projects-card__arrow" aria-hidden="true">
+              <img src="<?php echo esc_url(get_stylesheet_directory_uri().'/assets/images/blue-arrow.svg'); ?>" alt="">
+            </span>
+          </div>
+        </a>
+      </article>
+      <?php endforeach; endif; ?>
+    </div>
+
+    <!-- nav -->
+    <button class="projects-nav projects-prev" aria-label="Previous"></button>
+    <button class="projects-nav projects-next" aria-label="Next"></button>
+  </div>
+</section>
+
 <div class='page-section-divider'>
   <div class='divider-line'></div>
     <img src='/wp-content/themes/elementiq/assets/images/white-star.png' />
@@ -139,7 +221,7 @@
 </div>
 
 
-<section class='our-team-section'>
+<section class='our-team-section' id='team'>
   <div class='our-team-section__headings'>
     <h2>Our Team</h2>
     <p>As proud residents of the Lower Mainland, the Molnar team has an integrated understanding of the local communities it serves. Add to that, this dedicated group of experts has more than a century of combined experience in BC’s housing sector.</p>

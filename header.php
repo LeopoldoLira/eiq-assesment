@@ -18,16 +18,16 @@
         <nav>
             <ul>
                 <li>
-                    <a class='nav__link' href='#'>Home</a>
+                    <a class='nav__link' href='/'>Home</a>
                 </li>
                 <li>
-                    <a class='nav__link' href='#'>Our Team</a>
+                    <a class='nav__link' href='#team'>Our Team</a>
                 </li>
                 <li>
-                    <a class='nav__link' href='#'>Our Projects</a>
+                    <a class='nav__link' href='#projects-row'>Our Projects</a>
                 </li>
                 <li>
-                    <a class='nav__link' href='#'>Awards</a>
+                    <a class='nav__link' href='/awards'>Awards</a>
                 </li>
             </ul>
         </nav>

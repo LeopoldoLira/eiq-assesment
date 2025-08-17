@@ -49,6 +49,78 @@
 </section>
 
 
+
+<script defer>
+  document.addEventListener('DOMContentLoaded', () => {
+  const marquee = document.querySelector('.partners-marquee');
+  if (!marquee) return;
+
+  const scroller = marquee.querySelector('.partners-scroller');
+  const track    = marquee.querySelector('.partners-track');
+  const ref      = document.querySelector('.wrap') || document.body;
+
+  const speedPxPerSec = parseFloat(marquee.dataset.speed || 80); // px/sec
+  const pauseSec      = parseFloat(marquee.dataset.pause || 2);  // seconds
+
+  function setPads(){
+    const r = ref.getBoundingClientRect();
+    const cs = getComputedStyle(ref);
+    const padL = parseFloat(cs.paddingLeft) || 0;
+    const padR = parseFloat(cs.paddingRight) || 0;
+    const left  = Math.max(0, r.left) + padL;
+    const right = Math.max(0, window.innerWidth - r.right) + padR;
+    track.style.setProperty('--pad-left',  left + 'px');
+    track.style.setProperty('--pad-right', right + 'px');
+  }
+
+  function buildKeyframes(travel){
+    // movement time each way (s)
+    const move = travel / speedPxPerSec;
+    const total = move * 2 + pauseSec * 2;
+
+    // percentage stops for: start hold, end move, end hold
+    const p1 = (pauseSec / total) * 100;
+    const p2 = ((pauseSec + move) / total) * 100;
+    const p3 = ((pauseSec + move + pauseSec) / total) * 100;
+
+    // unique name so we can replace cleanly
+    const name = 'pp_' + Math.random().toString(36).slice(2);
+    let styleEl = document.getElementById('partnersKF');
+    if (!styleEl) {
+      styleEl = document.createElement('style');
+      styleEl.id = 'partnersKF';
+      document.head.appendChild(styleEl);
+    }
+    styleEl.textContent = `
+      @keyframes ${name} {
+        0%    { transform: translateX(0); }
+        ${p1}%{ transform: translateX(0); }                         /* hold at start */
+        ${p2}%{ transform: translateX(-${travel}px); }              /* move to end */
+        ${p3}%{ transform: translateX(-${travel}px); }              /* hold at end */
+        100%  { transform: translateX(0); }                         /* move back */
+      }
+    `;
+
+    track.style.animationName = name;
+    track.style.animationDuration = `${total}s`;
+  }
+
+  function refresh(){
+    setPads();
+    const travel = Math.max(0, track.scrollWidth - scroller.clientWidth);
+    buildKeyframes(travel);
+  }
+
+  window.addEventListener('load', refresh);
+  window.addEventListener('resize', () => requestAnimationFrame(refresh));
+  new ResizeObserver(refresh).observe(track);
+  new ResizeObserver(refresh).observe(ref);
+});
+
+
+</script>
+
+
 <script defer>
     // /assets/js/theme.js
 document.addEventListener('DOMContentLoaded', () => {

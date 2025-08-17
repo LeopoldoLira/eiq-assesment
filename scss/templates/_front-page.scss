@@ -204,6 +204,56 @@
 }
 
 
+.memberships-section{
+    padding: 0 9.375rem 7.5rem 9.375rem;
+    h2{
+        padding: 6.25rem 0 0 0  ;
+        font-size: 3.438rem;
+        font-weight: 400;
+        line-height: 130%;
+    }
+
+
+
+/* Clip area */
+.partners-scroller { overflow: hidden; }
+
+/* Track: JS sets --pad-left/right to match .wrap gutters and --travel distance */
+.partners-track{
+  display: flex; align-items: center;
+  gap: clamp(24px, 4vw, 64px);
+  padding-block: 24px;
+  padding-left: var(--pad-left, 24px);
+  padding-right: var(--pad-right, 24px);
+  will-change: transform;
+  animation-name: partners-slide;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: normal;   /* not alternate anymore */
+  animation-duration: 12s; /* JS overwrites with accurate value */
+}
+@keyframes partners-slide {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-1 * var(--travel, 0px))); }
+}
+
+/* Items / logos */
+.partners-item { flex: 0 0 auto; list-style-type: none; }
+.partners-img  { display:block; height: clamp(28px, 5vw, 56px); width:auto; filter: grayscale(1); opacity:.9; }
+
+.partners-track:hover { animation-play-state: paused; } /* pause on hover */
+
+@media (prefers-reduced-motion: reduce){
+  .partners-track{ animation: none; }
+}
+
+
+
+
+
+}
+
+
 
 .our-team-section{
     padding: 6.25rem 9.375rem;

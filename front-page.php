@@ -108,6 +108,31 @@
   <div class='divider-line'></div>
 </div>
 
+
+<section class='memberships-section'>
+  <h2>CHARITIES/MEMBERSHIPS</h2>
+   <!-- Full-bleed marquee -->
+  <div class="partners-marquee" data-speed="500" data-pause="2"> <!-- px/sec -->
+    <div class="partners-scroller" aria-label="Partner logos">
+      <ul class="partners-track">
+        <?php if (have_rows('partnerships')): while (have_rows('partnerships')): the_row();
+          $logo = get_sub_field('partner_image'); // ACF image (array)
+        ?>
+        <li class="partners-item">
+            <?php echo wp_get_attachment_image(
+              is_array($logo) ? $logo['ID'] : $logo,
+              'medium',
+              false,
+              ['class'=>'partners-img','alt'=>'Partner logo', 'loading'=>'lazy','decoding'=>'async']
+            ); ?>
+        </li>
+        <?php endwhile; endif; ?>
+      </ul>
+    </div>
+  </div>
+
+</section>
+
 <div class='page-section-divider'>
   <div class='divider-line'></div>
     <img src='/wp-content/themes/elementiq/assets/images/white-star.png' />

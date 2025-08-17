@@ -48,5 +48,26 @@
     <p>Website by <a href='https://elementiq.com'>Element IQ</a></p>
 </section>
 
+
+<script defer>
+    // /assets/js/theme.js
+document.addEventListener('DOMContentLoaded', () => {
+  const sliderEl = document.querySelector('.team-swiper');
+  // Create Swiper
+  const sw = new Swiper(sliderEl, {
+    autoHeights: false,
+    slidesPerView: 3,
+    spaceBetween: 30,            // card gap
+    freeMode: { enabled: true }, // natural scroll; turn off to snap to slides
+    watchOverflow: true,
+    grabCursor: true,
+    keyboard: { enabled: true },
+    mousewheel: { forceToAxis: true },
+
+  });
+});
+
+</script>
+
 </body>
 </html>

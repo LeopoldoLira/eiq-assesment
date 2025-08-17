@@ -206,17 +206,69 @@
 
 
 .our-team-section{
-    padding: 10rem 9.375rem;
+    padding: 6.25rem 9.375rem;
 
     &__headings{
         display: flex;
         align-items: center;
         justify-content: space-between;
+        padding-bottom: 3.75rem;
+        h2{
+            font-size: 3.438rem;
+            font-family: "Wittgenstein";
+            line-height: 130%;
+        }
 
         p{
             width: 70ch;
             font-size: 1.125rem;
+            font-family: sans-serif;
+            line-height: 170%;
         }
+    }
+
+
+    &__slider{
+
+        .swiper-wrapper{
+            align-items: stretch;
+        }
+
+        .team-swiper .swiper-slide { display: flex; height: auto; } // let card stretch
+.team-card { display: flex; flex-direction: column; height: 100%; }
+        /* Card layout */
+        .team-card {  /* slidesPerView:'auto' uses this */
+            width: 32.5rem;
+            background: #fff;
+            border-radius: 2.063rem;
+            padding: 3.438rem 0;
+            box-shadow: 0 8px 24px rgba(0,0,0,.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+
+            h3{
+                font-size: 2.188rem;
+            }
+            p{
+                font-size: 1rem;
+                margin: 0;
+                font-family: sans-serif;
+                width: 40ch;
+            }
+
+    &__media{
+        img{
+            width:24.375rem;
+        }
+    }
+
+
+}
+
+
     }
 }
 

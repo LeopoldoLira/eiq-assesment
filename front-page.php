@@ -121,7 +121,24 @@
     <p>As proud residents of the Lower Mainland, the Molnar team has an integrated understanding of the local communities it serves. Add to that, this dedicated group of experts has more than a century of combined experience in BC’s housing sector.</p>
   </div>
   <div class='our-team-section__slider'>
-
+     <!-- full-bleed container so slides can overflow the page container -->
+  <div class="swiper team-swiper swiper--bleed">
+    <div class="swiper-wrapper">
+      <?php if (have_rows('team_cards')): while (have_rows('team_cards')): the_row();
+        $img = get_sub_field('team_image'); // ACF image (array)
+        $name = get_sub_field('team_name');
+        $role = get_sub_field('team_position');
+      ?>
+      <article class="swiper-slide team-card">
+        <figure class="team-card__media">
+          <?php if ($img) echo wp_get_attachment_image($img['ID'], 'large', false, ['class'=>'team-card__img']); ?>
+        </figure>
+        <h3 class="team-card__name"><?php echo esc_html($name); ?></h3>
+        <p class="team-card__role"><?php echo esc_html($role); ?></p>
+      </article>
+      <?php endwhile; endif; ?>
+    </div>
+  </div>
   </div>
 </section>
 

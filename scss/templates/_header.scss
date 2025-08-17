@@ -1,5 +1,5 @@
 header{
-  position: sticky;
+  position: fixed;
   top: 0;
     padding: 1.875rem 6.25rem;
     display: flex;
@@ -29,9 +29,6 @@ header{
         transition: transform 300ms ease-in-out;
       }
     }
-
-
-
 
     /* on hover */
     .logo-badge:hover .logo-badge__outer {

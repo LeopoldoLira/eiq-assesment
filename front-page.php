@@ -55,10 +55,9 @@
        <a href='/projects'>
             <div>
               <p>View Projects</p>
-              <img src='/wp-content/themes/elementiq/assets/images/grey-star.svg' />
+              <img src='/wp-content/themes/elementiq/assets/images/blue-arrow.svg' />
             </div>
           </a>
-
     </div>
   </div>
   <div class='projects-section__showcase'>
